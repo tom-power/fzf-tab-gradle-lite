@@ -1,6 +1,8 @@
 # fzf tab gradle lite
 
-zsh plugin to provide light gradle completions, useful in large projects where gradle completions can be slow, giving base plugin completions and some options only, full gradle completion be called as needed.
+[zsh](https://www.zsh.org/) plugin for light gradle completions using [fzf-tab](https://github.com/Aloxaf/fzf-tab) (base plugin completions and some options only), + a widget for the full completion provided by the [gradle](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/gradle/gradle.plugin.zsh) plugin.
+
+Prefer it in large projects where gradle completions are slow, then the completion from the [gradle](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/gradle/gradle.plugin.zsh) plugin can be called only when needed.
 
 # Usage
 
@@ -14,7 +16,7 @@ bindkey '^G' 'fzf-tab-gradle-full'
 
 # Install
 
-depends on fzf, fzf-tab, gradle omz plugins
+depends on [zsh](https://www.zsh.org/), [omz](https://ohmyz.sh/), [fzf-tab](https://github.com/Aloxaf/fzf-tab), [gradle](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/gradle/gradle.plugin.zsh) plugins.
 
 ### Antigen
 
