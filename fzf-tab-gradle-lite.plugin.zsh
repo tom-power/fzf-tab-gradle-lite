@@ -1,15 +1,13 @@
 0="${${ZERO:-${0:#$ZSH_ARGZERO}}:-${(%):-%N}}"
 0="${${(M)0:#/*}:-$PWD/$0}"
-FZF_TAB_BOOKMARKS_HOME="${0:A:h}"
+FZF_TAB_GRADLE_HOME="${0:A:h}"
 
-for file in "$FZF_TAB_BOOKMARKS_HOME"/completions/*; do
-  source "$file"
-done
+source "$FZF_TAB_GRADLE_HOME"/completions/_gradle
 
 fzf-tab-complete-gradle-full() {
-  export gradleFull=true
+  export gradleFull
   fzf-tab-complete
-  export gradleFull=false
+  unset gradleFull
 }
 zle -N fzf-tab-complete-gradle-full
 

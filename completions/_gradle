@@ -1,8 +1,7 @@
 _gradle 2>/dev/null
-functions[_gradle_orig]=${functions[_gradle]}
+functions[_gradle_full]=${functions[_gradle]}
 
 _gradle_lite() {
-
   local -a tasksOptions tasksOptionsDescriptions
   tasksOptions=(
     "clean"
@@ -28,8 +27,8 @@ _gradle_lite() {
 }
 
 _gradle() {
-  if [ "$gradleFull" = true ]; then
-    _gradle_orig
+  if [[ -v gradleFull ]]; then
+    _gradle_full
   else
     _gradle_lite
   fi
