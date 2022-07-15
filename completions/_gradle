@@ -2,19 +2,29 @@ _gradle 2>/dev/null
 functions[_gradle_orig]=${functions[_gradle]}
 
 _gradle_lite() {
-  gradleCommands=(
+
+  local -a tasksOptions tasksOptionsDescriptions
+  tasksOptions=(
     "clean"
     "build"
     "test"
-  )
-  gradleOptions=(
     "--parallel"
     "--no-parallel"
     "--no-build-cache"
-    "--exclude"
+    "--exclude-task"
     "--max-workers"
   )
-  compadd -a gradleCommands + gradleOptions
+  tasksOptionsDescriptions=(
+    "clean            -- Deletes the build directory."
+    "build            -- Assembles and tests this project."
+    "test             -- Runs the unit tests."
+    "--parallel       -- Build projects in parallel. Gradle will attempt to determine the optimal number of executor threads to use."
+    "--no-parallel    -- Disables parallel exection to build projects."
+    "--no-build-cache -- Do not use the Gradle build cache."
+    "--exclude-task   -- Specifies a task to be excluded from execution."
+    "--max-workers    -- Sets the maximum number of workers that Gradle may use. For example --max-workers=3. The default is the number of processors."
+  )
+  compadd -d tasksOptionsDescriptions -a tasksOptions
 }
 
 _gradle() {
