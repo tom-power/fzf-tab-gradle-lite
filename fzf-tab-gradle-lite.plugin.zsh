@@ -6,12 +6,12 @@ for file in "$FZF_TAB_BOOKMARKS_HOME"/completions/*; do
   source "$file"
 done
 
-fzf-tab-gradle-full() {
+fzf-tab-complete-gradle-full() {
   export gradleFull=true
   fzf-tab-complete
   export gradleFull=false
 }
-zle -N fzf-tab-gradle-full
+zle -N fzf-tab-complete-gradle-full
 
 zstyle ':completion:complete:gradle*:' sort false
 zstyle ':fzf-tab:complete:gradle*:*' fzf-preview ''

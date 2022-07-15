@@ -8,10 +8,10 @@ Prefer it in large projects where gradle completions are slow, then the completi
 
 call fzf in gradle context as normal to get light completions.
 
-call `fzf-tab-gradle-full` to get full completions i.e.
+call `fzf-tab-complete-gradle` to get full completions i.e.
 
 ```zsh
-bindkey '^G' 'fzf-tab-gradle-full'
+bindkey '^G' 'fzf-tab-complete-gradle'
 ```
 
 # Install
