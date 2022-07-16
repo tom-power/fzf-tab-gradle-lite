@@ -18,19 +18,12 @@ bindkey '^G' 'fzf-tab-complete-gradle'
 
 depends on [zsh](https://www.zsh.org/), [omz](https://ohmyz.sh/), [fzf-tab](https://github.com/Aloxaf/fzf-tab), [gradle](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/gradle/gradle.plugin.zsh) plugins.
 
-### Antigen
+### Zplug
 ```
-# https://github.com/Aloxaf/fzf-tab/issues/177
-autoload -Uz compinit
-compinit
-
-antigen bundles <<EOBUNDLES
-    ...
-    fzf
-    Aloxaf/fzf-tab
-    tom-power/fzf-tab-gradle-lite
-    ...
-EOBUNDLES
+zplug "plugins/gradle", from:oh-my-zsh
+zplug "plugins/fzf", from:oh-my-zsh
+zplug "Aloxaf/fzf-tab"
+zplug "tom-power/fzf-tab-gradle-lite"
 ```
 
 ## Oh My Zsh
@@ -41,7 +34,7 @@ git clone https://github.com/tom-power/fzf-tab-gradle-lite ${ZSH_CUSTOM:-~/.oh-m
 
 ```sh
 # ~/.zshrc
-plugins=(... fzf-tab-gradle-lite)
+plugins=(... gradle fzf-tab-gradle-lite)
 ```
 
 ## Manual (Git Clone)
