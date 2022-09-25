@@ -26,6 +26,7 @@ _gradle_lite() {
   compadd -d tasksOptionsDescriptions -a tasksOptions
 }
 
+# https://github.com/Aloxaf/fzf-tab/issues/65#issuecomment-602144985
 _gradle() {
   if [[ -v gradleFull ]]; then
     _gradle_full
